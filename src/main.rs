@@ -24,7 +24,6 @@ fn handle_connection(mut stream: TcpStream) {
         ("HTTP/1.1 404 NOT FOUND", "src\\404.html")
     };
 
-
     let contents = fs::read_to_string(filename).unwrap();
     let length = contents.len();
 
@@ -32,5 +31,4 @@ fn handle_connection(mut stream: TcpStream) {
 
 
     stream.write_all(res.as_bytes()).unwrap();
-
 }
